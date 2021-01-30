@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from movie_service import MovieService
 
 app = Flask(__name__)
@@ -8,7 +8,9 @@ app = Flask(__name__)
 def movie_information(name):
     # Removing all the white spaces and putting the name together on the
     name = "".join(name.strip().split(' '))
-    return MovieService().movie_information_service(name)
+    movie_review_url = MovieService().movie_information_service(name)
+
+    return MovieService().movie_review_service(movie_review_url)
 
 
 if __name__ == '__main__':
