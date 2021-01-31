@@ -1,4 +1,3 @@
-import json
 import time
 import warnings
 from utils import initialize_browser
@@ -83,7 +82,6 @@ class MovieRepository:
         self.browser.close()
 
         return json2html.convert(json=imdb_data)
-
 
 
 if __name__ == '__main__':
